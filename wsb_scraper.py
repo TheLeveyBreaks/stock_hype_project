@@ -51,7 +51,3 @@ wsb_new_post = df
 def get_dataframe_wsb_new_post():
     wsb_new_post
     return wsb_new_post
-
-
-#Check overall data via csv
-#df.to_csv(r'C:\Users\Ryan Levey\OneDrive\Bureaublad\DE Project\stockhype\wsb_post_new.csv')

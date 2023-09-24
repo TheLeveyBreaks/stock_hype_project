@@ -19,10 +19,3 @@ def get_dataframe_ticker_data():
 
 
 data = get_dataframe_ticker_data()
-
-
-
-# stock_ticker = pd.read_csv(data_url_other)
-#
-# stock_ticker.to_csv(r'C:\Users\Ryan Levey\OneDrive\Bureaublad\DE Project\stockhype\stock_list.csv')
-#
