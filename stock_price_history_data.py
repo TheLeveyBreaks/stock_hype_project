@@ -72,21 +72,5 @@ if dfs:
 else:
 	print("No Data Found")
 
-
-#Function to pass thru stock ticker
-#df_result = get_stock_info(symbols)
-
-df_result.to_csv(r'C:\Users\Ryan Levey\OneDrive\Bureaublad\DE Project\stockhype\api_test4.csv')
-
-
-
-
-#Export to csv to test data
-#df_result.to_csv(r'C:\Users\Ryan Levey\OneDrive\Bureaublad\DE Project\stockhype\api_test3.csv')
-
-#If loop to test:
-
-# if df_result is not None:
-# 	print(df_result)
-# else:
-# 	 print("No Data Found.")
+def get_stocks_mentioned_historical_data():
+	return df_result
