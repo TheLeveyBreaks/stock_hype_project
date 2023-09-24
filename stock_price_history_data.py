@@ -67,7 +67,7 @@ for symbol in symbols:
 
 if dfs:
 	result_df = pd.concat(dfs, ignore_index = True)
-	print(result_df)
+	result_df
 
 else:
 	print("No Data Found")
