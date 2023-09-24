@@ -1,12 +1,28 @@
+# get S&P 500 Stock Data
+import datapackage
 import pandas as pd
 
-data_url_other = 'https://datahub.io/core/nyse-other-listings/r/other-listed.csv'
+data_url = 'https://datahub.io/core/s-and-p-500-companies/datapackage.json'
 
-stock_ticker = pd.read_csv(data_url_other)
+# to load Data Package into storage
+package = datapackage.Package(data_url)
+
+# to load only tabular data
+resources = package.resources
 
 def get_dataframe_ticker_data():
-    data_url_other = 'https://datahub.io/core/nyse-other-listings/r/other-listed.csv'
-    stock_ticker = pd.read_csv(data_url_other)
-    stock_ticker.columns = stock_ticker.columns.str.replace(' ', '_')
-    return stock_ticker
+    for resource in resources:
+        if resource.tabular:
+            data = pd.read_csv(resource.descriptor['path'])
+            return data
+            #print (data)
 
+
+data = get_dataframe_ticker_data()
+
+
+
+# stock_ticker = pd.read_csv(data_url_other)
+#
+# stock_ticker.to_csv(r'C:\Users\Ryan Levey\OneDrive\Bureaublad\DE Project\stockhype\stock_list.csv')
+#

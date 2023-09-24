@@ -20,7 +20,7 @@ counts = Counter()
 
 # Iterate over the strings in wsb_new_post and count the occurances in ticker_data
 
-for string in ticker_data['NASDAQ_Symbol']:
+for string in ticker_data['Symbol']:
     counts[string] = wsb_new_post['post_content'].apply(lambda x: string in x).sum()
 
 # Convert the dictionary to a df
