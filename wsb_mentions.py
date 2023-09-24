@@ -12,6 +12,7 @@ wsb_new_post = get_dataframe_wsb_new_post()
 
 
 # flatten the list column in wsb_new_post
+
 wsb_new_post['post_content'] = wsb_new_post['post_content'].apply(set)
 
 # Initialize a dictionary to store counts
@@ -27,7 +28,12 @@ for string in ticker_data['Symbol']:
 
 counts_df = pd.DataFrame(counts.items(), columns=['stock','count'])
 
-print(counts_df)
+counts_df = counts_df.sort_values(by='count', ascending =False)
+
+def get_wsb_mentions():
+    return counts_df
+
+#print(counts_df)
 
 #counts_df.to_csv(r'C:\Users\Ryan Levey\OneDrive\Bureaublad\DE Project\stockhype\wsb_mention_counts_2.csv')
 
